@@ -1,0 +1,14 @@
+{
+  "base_url": "http://127.0.0.1:8801",
+  "idle_seconds": 600,
+  "poll_seconds": 5,
+  "recent_seconds": 120,
+  "layout": "dual",
+  "ble_address": null,
+  "ble_ack_window": 12,
+  "led_enabled": false,
+  "preferred_wb_alias": "YOUR_ACCOUNT_LABEL",
+  "preferred_wb_quota_total": 8000,
+  "vibe_quota_total_eur": 127.5,
+  "photo_clock": false
+}
