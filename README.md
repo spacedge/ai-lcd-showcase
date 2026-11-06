@@ -55,17 +55,23 @@
 | 组件 | 地址 / 角色 | 开源或说明 |
 | --- | --- | --- |
 | Codex / 本地 harness | 本机调用 | [openai/codex](https://github.com/openai/codex) |
-| OpenCodex 聚合入口 | `127.0.0.1:10100` | 本机私有配置；屏幕只读本地状态，不提交配置 |
-| WorkBuddy 反代 | `127.0.0.1:8788` | 本机私有部署；字段仅供参考 |
-| Mistral Vibe 反代 | `127.0.0.1:8800` | 本机私有部署；余额字段仅供参考 |
-| AI Studio 2 API | `127.0.0.1:2048` | 本机只读服务与 `requests.db` |
-| 聚合看板 | `127.0.0.1:8801` | 本机运行实例 |
+| OpenCodex 类聚合入口 | 参考端口 `10100` | [clidge-jun/opencodex](https://github.com/clidge-jun/opencodex)；需核对本机实际版本，不是同一部署的保证 |
+| WorkBuddy 反代 | 参考端口 `8788` | [ardeyouxipianyi/workbuddy2api-hub](https://github.com/ardeyouxipianyi/workbuddy2api-hub)（MIT）；账号和余额字段按你的版本适配 |
+| Mistral Vibe 反代 | 参考端口 `8800` | [mistralai/mistral-vibe](https://github.com/mistralai/mistral-vibe) 是 CLI；本机所用兼容反代没有在本仓库认定为某个固定上游 |
+| AI Studio 2 API | 参考端口 `2048` | [Mag1cFall/AIStudio2API](https://github.com/Mag1cFall/AIStudio2API)（MIT）；`requests.db` 结构可随版本变化 |
+| 聚合看板 | 参考端口 `8801` | 本项目的本地适配实例；不是第三方依赖，也不是 GitHub 上的独立服务 |
 
-示例 `config.reference.json` 只展示屏幕需要的配置形状。账号别名、套餐总额、池 ID 和设备地址必须由部署者自行填写；它们不是代码默认值。
+示例 `config.reference.json` 只展示屏幕需要的配置形状。账号别名、套餐总额、池 ID 和设备地址必须由部署者自行填写；它们不是代码默认值。端口只是本机参考，不是要求对方用同一端口。
+
+**聚合看板可以完全省略。** 任何已有管理器、反代或自己写的脚本，只要按[适配契约](docs/ADAPTER.md)输出本地 JSON，屏幕核心即可使用。没有 8801 的用户不需要部署一个 8801。
 
 ## 相关开源项目
 
-- [MysticRichard/magpie-lcd-bridge](https://github.com/MysticRichard/magpie-lcd-bridge)：RGB565、图像分帧、Bleak 连接与 LCD 图片协议参考。本实例的协议部分基于其思路，并保留 MIT 许可证和上游署名。
+- [MysticRichard/magpie-lcd-bridge](https://github.com/MysticRichard/magpie-lcd-bridge)（MIT）：RGB565、图像分帧、Bleak 连接与 DA14585 BLE TFT LCD 图片协议参考。本实例的协议部分基于其思路，并保留上游署名。
+- [ardeyouxipianyi/workbuddy2api-hub](https://github.com/ardeyouxipianyi/workbuddy2api-hub)（MIT）：WorkBuddy 多账号反代网关。屏幕不内置其凭据、账号池或任务逻辑。
+- [Mag1cFall/AIStudio2API](https://github.com/Mag1cFall/AIStudio2API)（MIT）：AI Studio Playground/Build 的 OpenAI、Anthropic 与 Gemini 兼容 API。只读适配可消费其本地使用记录，具体数据库结构要在使用者安装的版本上核对。
+- [clidge-jun/opencodex](https://github.com/clidge-jun/opencodex)：多种模型接入 Codex CLI/App 的聚合代理参考。名字相近的 OpenCodex 项目很多，本示例不假设它们数据格式相同。
+- [mistralai/mistral-vibe](https://github.com/mistralai/mistral-vibe)：Mistral 的 CLI coding agent；如果使用第三方兼容反代，额度与余额字段由该反代的部署者定义。
 - [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api)：账号与额度管理思路参考。它是独立项目，本项目不修改也不内置它。
 - [TakWolf/fusion-pixel-font](https://github.com/TakWolf/fusion-pixel-font)：Fusion Pixel 12px 等宽字体，本实例界面使用其字形；字体遵循 SIL Open Font License 1.1。
 

@@ -10,6 +10,14 @@ maintained projects:
   tsl0922 is retained in the runtime project's notice.
 - https://github.com/Wei-Shaw/sub2api — independent account/usage manager;
   LGPL-3.0 upstream. No upstream code is copied into this showcase.
+- https://github.com/ardeyouxipianyi/workbuddy2api-hub — WorkBuddy gateway;
+  MIT license. The showcase does not redistribute its credentials or data.
+- https://github.com/Mag1cFall/AIStudio2API — AI Studio API bridge; MIT
+  license. Its local database schema is version-specific.
+- https://github.com/clidge-jun/opencodex — an independent multi-provider
+  proxy reference. Similarly named projects are not interchangeable.
+- https://github.com/mistralai/mistral-vibe — Mistral's coding CLI. A local
+  compatible reverse proxy is a deployment choice, not this upstream project.
 - https://github.com/TakWolf/fusion-pixel-font — Fusion Pixel Font, SIL Open
   Font License 1.1. The runtime project carries the complete font license.
 - https://github.com/openai/codex — local coding-client attribution reference.
